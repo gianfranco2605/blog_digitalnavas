@@ -15,7 +15,7 @@ export default function Home({ posts }) {
             {siteMetadata.description}
           </h1>
           <p className="text-2xl leading-7 text-gray-800 dark:text-gray-400">
-            Navigating the Web Developer's Odyssey
+            Exploring the Junior Web Developer's Path
           </p>
           <p className="text-sm leading-7 text-gray-500 dark:text-gray-400">
             by {siteMetadata.author}
