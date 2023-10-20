@@ -13,9 +13,7 @@ const siteMetadata = {
   mastodon: 'https://mastodon.social/@mastodonuser',
   email: 'websites@digitalnavas.it',
   github: 'https://github.com/gianfranco2605',
-  twitter: 'https://twitter.com/Twitter',
-  facebook: 'https://facebook.com',
-  youtube: 'https://youtube.com',
+  twitter: 'https://twitter.com/Gianfranco2605',
   linkedin: 'https://www.linkedin.com/in/gianfranconavasfernandiniwebdeveloper/',
   locale: 'en-US',
   analytics: {
