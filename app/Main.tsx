@@ -1,24 +1,49 @@
+"use client"
+
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
+import { motion } from 'framer-motion'
+
+const textVariant = {
+  initial: {
+    x: -500,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.1,
+    },
+  },
+}
 
 const MAX_DISPLAY = 6
 
 export default function Home({ posts }) {
   return (
     <div className="divide-y divide-gray-200 dark:divide-gray-700">
-      <div className="space-y-2 pb-8 pt-6 md:space-y-5">
-        <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+      <motion.div
+        variants={textVariant}
+        initial="initial"
+        animate="animate"
+        className="space-y-2 pb-8 pt-6 md:space-y-5"
+      >
+        <motion.h1 variants={textVariant} className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
           {siteMetadata.description}
-        </h1>
-        <p className="text-2xl leading-7 text-gray-800 dark:text-gray-400">
+        </motion.h1>
+        <motion.p variants={textVariant} className="text-2xl leading-7 text-gray-800 dark:text-gray-400">
           Exploring the Junior Web Developer's Path
-        </p>
-        <p className="text-sm leading-7 text-gray-500 dark:text-gray-400">
-          by {siteMetadata.author}
-        </p>
-      </div>
+        </motion.p>
+        <Link href="/about">
+          <motion.p variants={textVariant} className="text-sm leading-7 text-gray-500 dark:text-gray-400">
+            by {siteMetadata.author}
+          </motion.p>
+        </Link>
+      </motion.div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8">
         {posts.slice(0, MAX_DISPLAY).map((post) => {
           const { slug, date, title, summary, tags } = post
