@@ -18,3 +18,4 @@ export default function Page() {
     </>
   )
 }
+console.log('Hello, Node.js!');
